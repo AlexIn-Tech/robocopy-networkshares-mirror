@@ -1,4 +1,6 @@
-This script uses robocopy to synchronize files between two network shares.
+# Robocopy File Sync Script
+
+This script uses robocopy to synchronize files between two network shares, deleting any files or directories at the destination that do not exist at the source.
 
 ## Requirements
 
@@ -17,10 +19,11 @@ This script uses robocopy to synchronize files between two network shares.
 The script uses the following options when running robocopy:
 
 - `/MIR`: Mirror the source and destination directories. This option copies all files from the source to the destination and deletes any files at the destination that do not exist at the source.
+- `/PURGE`: Delete files and directories at the destination that do not exist at the source.
 - `/Z`: Enable restartable mode. This allows the copy operation to resume if it is interrupted.
 - `/XJ`: Exclude junctions (symbolic links) from the copy operation.
-- `/R:1`: Retry the copy operation 1 time if an error occurs.
-- `/W:1`: Wait 1 second between retries.
+- `/R:3`: Retry the copy operation 3 times if an error occurs.
+- `/W:30`: Wait 30 seconds between retries.
 
 ## Tips
 
