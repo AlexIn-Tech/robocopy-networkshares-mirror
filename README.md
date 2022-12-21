@@ -26,6 +26,10 @@ The script uses the following options when running `robocopy`:
 - `/W:30`: Wait 30 seconds between retries.
 - `/LOG+:%logfile%`: Write the output of the command to the specified log file.
 
+## Logging
+
+The script includes a `forfiles` command to delete log files that are older than 3 days. This helps to prevent the log directory from filling up with old log files.
+
 ## Tips
 
 - You can customize the options used by `robocopy` by modifying the script. For example, you can change the retry count or wait time by modifying the `/R` and `/W` options.
