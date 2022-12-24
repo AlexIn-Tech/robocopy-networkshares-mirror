@@ -33,7 +33,7 @@ The script includes a `forfiles` command to delete log files that are older than
 ## Tips
 
 - You can customize the options used by `robocopy` by modifying the script. For example, you can change the retry count or wait time by modifying the `/R` and `/W` options.
-- You can schedule the script to run automatically using the Windows Task Scheduler. This allows you to sync files on a regular basis without needing to manually run the script.
+- You can schedule the script to run automatically using the Windows Task Scheduler. This allows you to sync files on a regular basis without needing to manually run the script. Don't forget to remove the `pause` at the end of the script. Otherwise your schedule task will stay in running. 
 - You can modify the script to send email notifications when the file copy operation is complete, or if any errors occur.
 - You can add additional options to the script to allow the user to customize the file copy operation. For example, you can add options to include or exclude specific file types, or to specify the maximum size of files to be copied.
 
